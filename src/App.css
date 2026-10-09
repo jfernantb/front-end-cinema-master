@@ -586,6 +586,7 @@ footer p {
   margin-bottom: 1.5rem;
   border-bottom: 3px solid #007bff;
   padding-bottom: 1rem;
+  overflow-wrap: break-word;
 }
 
 .dark .movie-details h1 {
@@ -631,13 +632,15 @@ footer p {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 0.5rem;
-  margin: 2rem 0;
   max-width: 500px;
   margin: 2rem auto;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
 }
 
 .seat {
   aspect-ratio: 1;
+  min-width: 28px;
   border: 2px solid #ddd;
   border-radius: 8px;
   cursor: pointer;
@@ -835,6 +838,14 @@ footer p {
     margin: 1rem auto;
     padding: 2rem;
   }
+
+  .seat-selection {
+    padding: 1.5rem;
+  }
+
+  .seats-grid {
+    gap: 0.35rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -871,5 +882,18 @@ footer p {
 
   .form-container {
     padding: 1.5rem;
+  }
+
+  .seat-selection {
+    padding: 1rem;
+  }
+
+  .seats-grid {
+    gap: 0.25rem;
+  }
+
+  .seat {
+    min-width: 24px;
+    font-size: 0.8rem;
   }
 }

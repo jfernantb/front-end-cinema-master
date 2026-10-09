@@ -52,6 +52,14 @@ export const useMovies = () => {
     return allMovies.find(movie => movie.id === parseInt(id));
   };
 
+  // Datos por ciudad (nombre + cartelera) usados por CinemaDetail
+  const citiesData = {
+    madrid: { name: 'Madrid', movies: moviesDataMadrid },
+    barcelona: { name: 'Barcelona', movies: moviesDataBarcelona },
+    valencia: { name: 'Valencia', movies: moviesDataValencia },
+    sevilla: { name: 'Sevilla', movies: moviesDataSevilla }
+  };
+
   return {
     // Estado del contexto
     city,
@@ -63,6 +71,7 @@ export const useMovies = () => {
 
     // Datos de películas
     movies: getMoviesByCity(city),
+    citiesData,
     getCurrentCityName,
     getMovieById
   };
